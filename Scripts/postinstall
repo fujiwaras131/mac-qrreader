@@ -1,0 +1,14 @@
+#!/bin/bash
+set -euo pipefail
+
+PLIST="/Library/LaunchAgents/com.company.qrreader.plist"
+TARGET_UID=$(stat -f %u /dev/console || echo "")
+
+if [ -n "$TARGET_UID" ] && [ -f "$PLIST" ]; then
+  launchctl bootout gui/$TARGET_UID "$PLIST" || true
+  launchctl bootstrap gui/$TARGET_UID "$PLIST" || true
+  launchctl enable gui/$TARGET_UID/com.company.qrreader || true
+  launchctl kickstart -k gui/$TARGET_UID/com.company.qrreader || true
+fi
+
+exit 0

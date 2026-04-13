@@ -1,0 +1,8 @@
+#!/bin/bash
+set -euo pipefail
+
+if [ -f /Library/LaunchAgents/com.company.qrreader.plist ]; then
+  launchctl bootout gui/$(id -u) /Library/LaunchAgents/com.company.qrreader.plist || true
+fi
+
+exit 0

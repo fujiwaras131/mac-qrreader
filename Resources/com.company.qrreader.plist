@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.company.qrreader</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/libexec/com.company.qrreader/qr-reader-daemon</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/tmp/com.company.qrreader.log</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/com.company.qrreader.err.log</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>QR_BAUD</key>
+        <string>9600</string>
+        <key>QR_DATABITS</key>
+        <string>8</string>
+        <key>QR_PARITY</key>
+        <string>N</string>
+        <key>QR_STOPBITS</key>
+        <string>1</string>
+        <key>QR_DEDUPE_WINDOW_SEC</key>
+        <string>0.35</string>
+        <key>QR_LINE_ENDING</key>
+        <string>\n</string>
+    </dict>
+</dict>
+</plist>
