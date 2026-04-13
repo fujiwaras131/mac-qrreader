@@ -32,11 +32,9 @@ jobs:
           fi
           
       - name: Make scripts executable
-        working-directory: mac-reader
         run: chmod +x Scripts/build-pkg.sh Scripts/preinstall Scripts/postinstall Scripts/uninstall.sh
 
       - name: Build PKG
-        working-directory: mac-reader
         run: ./Scripts/build-pkg.sh
 
       - name: Upload PKG artifact
